@@ -1,58 +1,15 @@
-<!-- <html>
-  <head>
-    <title>Terceira experiência de RA usando o AR.js e o A-frame. Marcador Hiro e um modelo 3D.</title>
-     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  </head>
-  <body style="margin: 0px; overflow: hidden">
-    <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false">
-        <a-assets>
-          <a-asset-item id="modelo" src="star.gltf"></a-asset-item>
-        </a-assets>
-      
-        <a-marker type="pattern" url="sword.patt">
-        <a-entity id="modelo3d"
-          position="0 0 0"
-          rotation="0 0 0"
-          scale="1 1 1"
-          gltf-model="#modelo"></a-entity>
-        </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
-</html> -->
-
 <html>
   <head>
-    <title>Quinta experiência de RA usando o AR.js e o A-frame. Marcador Hiro e um video.</title>
-     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <title>Sexta experiência de RA usando AR.js e o A-Frame. Location-based</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.7/three.js/build/ar-threex-location-only.js'></script>
+    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js'></script>
   </head>
-  <body style="margin: 0px; overflow: hidden">
-    <video id="videomao" src="video mao.mp4" autoplay loop crossorigin="anonymous" playsinline webkit-playsinline muted style="display: none;"></video>
-    <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false">
-        <a-marker preset="hiro">
-        <a-video src="#videomao" position="0 0.5 0" rotation="-90 0 0" width="1" height="1.8"></a-video>
-      </a-marker>
-      <a-entity camera></a-entity>
+  <body>
+    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+    <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: -4.979991076004118; longitude: -39.05593834243967" scale="10 10 10"></a-entity>
+ 
     </a-scene>
   </body>
-</html>
-
-<!-- <html>
-  <head>
-    <title>Primeira experiência de RA usando o AR.js e o A-frame. Marcador Hiro e modelos 3D do A-frame.</title>
-     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  </head>
-  <body style="margin: 0px; overflow: hidden">
-    <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false">
-        <a-marker preset="hiro">
-        <a-box position="0 0.5 0" material="color: green"></a-box>
-        <a-cylinder position="2 0.5 0" material="color: black"></a-cylinder>
-        <a-ring position="-2 0.5 0" material="color: yellow"></a-ring>
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
-</html> -->
+</html> 
